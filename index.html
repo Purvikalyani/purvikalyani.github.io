@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purvikalyani Prasannah — Computational Cognitive Neuroscience</title>
+  <meta name="description" content="Academic CV and research portfolio of Purvikalyani Prasannah — Computational Cognitive Neuroscience, Neural Modeling, and Human Electrophysiology." />
+
+  <!-- Tailwind CSS for responsive layout & clean typography -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Libre Baskerville (Classic Academic Serif) & Inter (Clean Sans-Serif) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#fcfbf9',
+            surface: '#f5f3ee',
+            ink: '#1c2127',
+            muted: '#555d68',
+            hairline: '#e3dfd7',
+            accent: '#234674',
+            accentHover: '#173154'
+          },
+          fontFamily: {
+            serif: ['"Libre Baskerville"', 'Georgia', 'serif'],
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Smooth academic typography & print rules */
+    html {
+      scroll-behavior: smooth;
+      background-color: #fcfbf9;
+      color: #1c2127;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link.active {
+      color: #234674;
+      font-weight: 500;
+    }
+
+    .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -6px;
+      height: 1.5px;
+      background-color: #234674;
+    }
+
+    /* Subtle fade transition when switching pages */
+    .page-section {
+      display: none;
+      animation: fadeIn 0.2s ease-in-out;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(3px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Clean Print / PDF Export Styling when clicking "Download CV" */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 10.5pt;
+        line-height: 1.45;
+      }
+      header, footer, .no-print, .image-placeholder-box {
+        display: none !important;
+      }
+      .page-section {
+        display: block !important;
+        margin-bottom: 1.5rem !important;
+        page-break-inside: avoid;
+      }
+      main {
+        max-width: 100% !important;
+        padding: 0 !important;
+      }
+      a {
+        text-decoration: none !important;
+        color: #000000 !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink min-h-screen flex flex-col">
+
+  <!-- =====================================================================
+       TOP NAVIGATION HEADER (6 Dedicated Views via Hash Routing)
+       Works seamlessly on GitHub Pages without any build tools.
+       ===================================================================== -->
+  <header class="border-b border-hairline bg-paper/95 sticky top-0 z-30 backdrop-blur-sm">
+    <div class="max-w-4xl mx-auto px-6 py-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <!-- Name & Affiliation -->
+      <div>
+        <a href="#home" onclick="navigateTo('home')" class="font-serif text-xl font-bold tracking-tight text-ink hover:text-accent transition-colors">
+          Purvikalyani Prasannah
+        </a>
+        <p class="text-xs text-muted mt-0.5">
+          B.Sc. (Hons) Psychology &amp; Chemistry · Krea University
+        </p>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Primary Navigation" class="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted">
+        <a href="#home" data-route="home" onclick="navigateTo('home')" class="nav-link active hover:text-ink py-1">Home</a>
+        <a href="#research" data-route="research" onclick="navigateTo('research')" class="nav-link hover:text-ink py-1">Research</a>
+        <a href="#publications" data-route="publications" onclick="navigateTo('publications')" class="nav-link hover:text-ink py-1">Publications</a>
+        <a href="#conferences" data-route="conferences" onclick="navigateTo('conferences')" class="nav-link hover:text-ink py-1">Conferences</a>
+        <a href="#courses" data-route="courses" onclick="navigateTo('courses')" class="nav-link hover:text-ink py-1">Courses &amp; Teaching</a>
+        <a href="#workshops" data-route="workshops" onclick="navigateTo('workshops')" class="nav-link hover:text-ink py-1">Workshops</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       MAIN CONTENT CONTAINER
+       ===================================================================== -->
+  <main class="max-w-4xl w-full mx-auto px-6 py-10 md:py-14 flex-grow">
+
+    <!-- ===================================================================
+         PAGE 1: HOME (Bio, Photo Slot, Links, News, Contact, Download CV)
+         =================================================================== -->
+    <section id="page-home" class="page-section active">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-10 items-start">
+        
+        <!-- Left Column: Bio & Research Statement (8 cols) -->
+        <div class="md:col-span-8 space-y-5">
+          <h1 class="font-serif text-2xl md:text-3xl font-normal text-ink leading-snug">
+            Computational Cognitive Neuroscience &amp; Visual Working Memory
+          </h1>
+
+          <p class="text-[15.5px] text-ink/90">
+            I am a final-year undergraduate researcher pursuing a <strong>B.Sc. (Hons) with Research in Psychology</strong> (concentration in <strong>Chemistry</strong>) at <strong>Krea University</strong>, working in the 
+            <span class="text-accent font-medium">Computational Cognition Laboratory</span> under the supervision of Dr. Rakesh Sengupta.
+          </p>
+
+          <p class="text-[15.5px] text-ink/90">
+            My research explores how the human brain dynamically organizes transient sensory inputs into structured internal representations across space and time. To bridge algorithmic theories and their biological implementations, I combine <strong>recurrent neural network modeling</strong> (On-Center Off-Surround and bump-attractor dynamics), <strong>human electrophysiology</strong> (64-channel EEG-ERP and oscillatory analysis), and <strong>behavioral psychophysics</strong>.
+          </p>
+
+          <!-- Action Buttons: Download CV & Links -->
+          <div class="pt-2 flex flex-wrap items-center gap-3 no-print">
+            <!--
+              HOW TO ATTACH YOUR PDF CV ON GITHUB:
+              1. Upload a file named "cv.pdf" into the same folder as index.html on GitHub.
+              2. Change onclick="handleCVDownload(event)" to simply let the browser open cv.pdf,
+                 or keep this smart handler which checks for cv.pdf and falls back to clean PDF print!
+            -->
+            <a href="cv.pdf" onclick="handleCVDownload(event)" class="inline-flex items-center gap-2 px-4 py-2 rounded border border-accent bg-accent text-white text-sm font-medium hover:bg-accentHover transition-colors">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 16v-12m0 12l-4-4m4 4l4-4M4 20h16" />
+              </svg>
+              Download CV (PDF)
+            </a>
+
+            <!-- EDIT: Paste your actual ORCID URL inside href="..." below -->
+            <a href="https://orcid.org/0000-0000-0000-0000" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
+              <span class="inline-block w-2 h-2 rounded-full bg-[#a6ce39]"></span>
+              ORCID
+            </a>
+
+            <!-- EDIT: Paste your actual LinkedIn URL inside href="..." below -->
+            <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
+              <svg class="w-3.5 h-3.5 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+              </svg>
+              LinkedIn
+            </a>
+
+            <!-- Optional: GitHub Profile Link -->
+            <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Profile Photo Slot & Contact Box (4 cols) -->
+        <div class="md:col-span-4 space-y-6">
+          
+          <!-- ===============================================================
+               EDIT: PROFILE PHOTO SLOT
+               To add your photo:
+               1. Upload your photo (e.g., "profile.jpg") to your GitHub repo.
+               2. Replace src="" below with src="profile.jpg"
+               =============================================================== -->
+          <div class="w-44 md:w-full max-w-[220px] mx-auto md:mx-0">
+            <div class="aspect-[4/5] rounded border border-hairline bg-surface overflow-hidden flex flex-col items-center justify-center text-center p-4 relative">
+              <img 
+                id="profile-photo"
+                src="" 
+                alt="Purvikalyani Prasannah"
+                onload="this.classList.remove('hidden'); document.getElementById('photo-placeholder').classList.add('hidden');"
+                onerror="this.classList.add('hidden');"
+                class="hidden w-full h-full object-cover absolute inset-0"
+              />
+              <div id="photo-placeholder" class="text-muted space-y-1.5">
+                <svg class="w-8 h-8 mx-auto text-muted/60" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                </svg>
+                <p class="text-xs font-medium">Photo Placeholder</p>
+                <p class="text-[11px] leading-tight text-muted/80">Add <code>profile.jpg</code> to repo &amp; set <code>src="profile.jpg"</code></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact & Affiliation Card -->
+          <div class="border-t border-hairline pt-4 space-y-2.5 text-sm">
+            <h2 class="font-serif text-sm font-bold uppercase tracking-wider text-muted">Contact</h2>
+            <p class="text-ink">
+              <!-- EDIT: Replace with your preferred academic email -->
+              <span class="block text-xs text-muted">Email</span>
+              <a href="mailto:purvikalyani.prasannah@krea.ac.in" class="text-accent hover:underline break-all">
+                purvikalyani.prasannah@krea.ac.in
+              </a>
+            </p>
+            <p class="text-ink">
+              <span class="block text-xs text-muted">Laboratory</span>
+              Computational Cognition Laboratory<br />
+              School of Interwoven Arts and Sciences<br />
+              Krea University, Sri City, India
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Updates / News Section -->
+      <div class="mt-12 pt-8 border-t border-hairline">
+        <h2 class="font-serif text-lg font-bold text-ink mb-4">Recent Updates</h2>
+        <ul class="space-y-3 text-sm">
+          <!-- EDIT: Add or update news items chronologically -->
+          <li class="flex flex-col sm:flex-row sm:gap-4">
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">2026</span>
+            <span>Released preprint <em>“From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory”</em> with Dr. Rakesh Sengupta.</span>
+          </li>
+          <li class="flex flex-col sm:flex-row sm:gap-4">
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">2026</span>
+            <span>Presented computational OCOS serial-recall modeling at <strong>CogSci 2026</strong> and visual working memory mental sorting findings at <strong>NAoP 2026</strong>.</span>
+          </li>
+          <li class="flex flex-col sm:flex-row sm:gap-4">
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">2025–2026</span>
+            <span>Awarded the <strong>Young Scientist DST Travel Grant</strong> for presenting peer-reviewed neural modeling research at the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC).</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 2: RESEARCH PROJECTS (With Editable Figure / Image Slots)
+         =================================================================== -->
+    <section id="page-research" class="page-section">
+      <div class="border-b border-hairline pb-4 mb-8">
+        <h1 class="font-serif text-2xl font-bold text-ink">Research Projects</h1>
+        <p class="text-sm text-muted mt-1">
+          Computational neural modeling, human electrophysiology (EEG), and behavioral psychophysics.
+        </p>
+      </div>
+
+      <div class="space-y-10">
+
+        <!-- PROJECT 1 -->
+        <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-8 space-y-2.5">
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Undergraduate Capstone Thesis · 2025–2026</div>
+            <h2 class="font-serif text-lg font-bold text-ink">
+              Unified OCOS Modeling &amp; 64-Channel EEG Dynamics of Visual Working Memory Stability
+            </h2>
+            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta · Methods: Python, MNE-Python, 64-Channel EEG, Linear Mixed-Effects (LME)</p>
+            <p class="text-sm text-ink/90">
+              Developing a unified On-Center Off-Surround (OCOS) network model integrating dynamic self-excitation and distance-dependent lateral inhibition to account for visual working memory (VWM) stability boundaries and the von Restorff isolation effect. Empirically testing model predictions against 64-channel human EEG data (<em>N</em> = 20)—analyzing Contralateral Delay Activity (CDA), P3b, and beta-band oscillations via MNE-Python and LME model-to-brain fitting.
+            </p>
+          </div>
+          <!-- EDIT: Project 1 Image Slot — Upload an image (e.g., "fig_capstone.png") and set src="fig_capstone.png" -->
+          <div class="md:col-span-4 image-placeholder-box">
+            <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
+              <img src="" alt="Capstone EEG & OCOS Model Figure" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <div class="text-muted">
+                <p class="text-xs font-medium">Figure Slot 1</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_capstone.png"</code> to display EEG / model plot</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-8 space-y-2.5">
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Computational Theory · 2025–2026</div>
+            <h2 class="font-serif text-lg font-bold text-ink">
+              From Local Competition to Bump Attractors: Excitation Width, Capacity &amp; Lattice Locking
+            </h2>
+            <p class="text-xs text-muted">Collaborator: Dr. Rakesh Sengupta · Methods: Dynamical Systems, Energy-Function Formalism, Numerical Continuation</p>
+            <p class="text-sm text-ink/90">
+              Placed discrete OCOS networks and continuous bump attractors into a single parameterized family governed by recurrent excitation width at fixed total excitation. Derived closed-form stability and capacity bounds for the narrow limit and demonstrated that widening excitation trades capacity and noise resistance for spatial continuity—while revealing that a subthreshold recruitment margin at item edges (&rho; = 0.91) governs lattice locking versus memory capture by new inputs.
+            </p>
+          </div>
+          <!-- EDIT: Project 2 Image Slot -->
+          <div class="md:col-span-4 image-placeholder-box">
+            <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
+              <img src="" alt="OCOS to Bump Attractor Phase Diagram" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <div class="text-muted">
+                <p class="text-xs font-medium">Figure Slot 2</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_attractor.png"</code> to display stability curves</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-8 space-y-2.5">
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Recurrent Neural Modeling · 2024–2025</div>
+            <h2 class="font-serif text-lg font-bold text-ink">
+              Time-Varying Self-Excitation &amp; Serial Position Curves in Working Memory
+            </h2>
+            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta · Methods: GNU Octave, Python, Dynamical Rate Networks</p>
+            <p class="text-sm text-ink/90">
+              Simulated a recurrent OCOS architecture incorporating time-varying self-excitation across sequential item presentation. Showed that modulating the decay constant of self-excitation systematically reproduces classic primacy and recency serial position effects without requiring separate short- and long-term memory stores.
+            </p>
+          </div>
+          <!-- EDIT: Project 3 Image Slot -->
+          <div class="md:col-span-4 image-placeholder-box">
+            <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
+              <img src="" alt="Serial Position Curve Simulation" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <div class="text-muted">
+                <p class="text-xs font-medium">Figure Slot 3</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_serial.png"</code> to display recall simulation</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="border-b border-hairline pb-8 space-y-2">
+          <div class="text-xs font-mono uppercase tracking-wider text-accent">Behavioral Psychophysics · 2025–2026</div>
+          <h2 class="font-serif text-lg font-bold text-ink">
+            Active Mental Manipulation vs. Passive Maintenance in Visual Working Memory
+          </h2>
+          <p class="text-xs text-muted">Methods: PsychoPy, Statistical Modeling in R (<em>N</em> = 30) · Presented at NAoP 2026</p>
+          <p class="text-sm text-ink/90">
+            Designed a psychophysical paradigm contrasting passive serial recall against active mental sorting across varying set sizes and stimulus categories, demonstrating that active manipulation imposes significantly steeper load-dependent costs on recall accuracy and reaction time than maintenance alone.
+          </p>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="space-y-2">
+          <div class="text-xs font-mono uppercase tracking-wider text-accent">Time Perception &amp; Embodied Cognition · 2023–2024</div>
+          <h2 class="font-serif text-lg font-bold text-ink">
+            Cross-Modal Temporal Perception &amp; Embodied Timing in Percussionists
+          </h2>
+          <p class="text-xs text-muted">Methods: Psychophysics, Mixed Quantitative–Qualitative Analysis</p>
+          <p class="text-sm text-ink/90">
+            Investigated temporal interval estimation across visual and auditory modalities, followed by a mixed-methods study examining how bodily, motor, and contextual constraints shape subjective time perception in trained percussionists.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 3: PUBLICATIONS (Preprints & Peer-Reviewed Papers + BibTeX)
+         =================================================================== -->
+    <section id="page-publications" class="page-section">
+      <div class="border-b border-hairline pb-4 mb-8">
+        <h1 class="font-serif text-2xl font-bold text-ink">Publications &amp; Preprints</h1>
+        <p class="text-sm text-muted mt-1">
+          Preprints and peer-reviewed proceedings in computational cognitive science.
+        </p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Preprints Subheading -->
+        <div>
+          <h2 class="font-serif text-base font-bold uppercase tracking-wider text-muted mb-4">Manuscripts &amp; Preprints</h2>
+          
+          <div class="border border-hairline rounded bg-white p-5 space-y-3">
+            <p class="text-[15px] leading-relaxed">
+              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2026). From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory. <em>Preprint, Computational Cognition Laboratory, Krea University</em>.
+            </p>
+            <div class="flex flex-wrap gap-3 text-xs no-print">
+              <button onclick="toggleBlock('abs-1')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
+                Abstract
+              </button>
+              <button onclick="toggleBlock('bib-1')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
+                BibTeX
+              </button>
+              <!-- EDIT: Add link to arXiv/bioRxiv/OSF PDF when uploaded -->
+              <a href="#publications" class="px-2.5 py-1 rounded border border-hairline text-muted hover:text-accent transition-colors">
+                Preprint PDF (Coming Soon)
+              </a>
+            </div>
+            <div id="abs-1" class="hidden pt-2 border-t border-hairline text-xs text-muted leading-relaxed">
+              On-centre off-surround (OCOS) networks and bump attractors, the two main recurrent models of visual working memory, differ chiefly in how far recurrent excitation spreads. Placing both in a unified family parameterized by excitation width at fixed total excitation, we solve the narrow OCOS limit analytically via the energy-function Hessian formalism and show that widening excitation trades capacity and noise resistance for spatial continuity—while revealing that items remain locked to the lattice via a subthreshold recruitment margin at their edges (&rho; = 0.91), whose collapse causes new inputs to capture rather than join stored memories.
+            </div>
+            <pre id="bib-1" class="hidden p-3 rounded bg-surface text-xs font-mono overflow-x-auto text-ink">@article{prasannah2026local,
+  title={From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory},
+  author={Prasannah, Purvikalyani and Sengupta, Rakesh},
+  year={2026},
+  note={Preprint, Computational Cognition Laboratory, Krea University}
+}</pre>
+          </div>
+        </div>
+
+        <!-- Peer-Reviewed Subheading -->
+        <div>
+          <h2 class="font-serif text-base font-bold uppercase tracking-wider text-muted mb-4">Peer-Reviewed Conference Proceedings</h2>
+          
+          <div class="border border-hairline rounded bg-white p-5 space-y-3">
+            <p class="text-[15px] leading-relaxed">
+              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2025). Modeling serial position effects in working memory using a recurrent on-center off-surround network with time-varying self-excitation. In <em>Proceedings of the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)</em>.
+            </p>
+            <div class="flex flex-wrap gap-3 text-xs no-print">
+              <button onclick="toggleBlock('abs-2')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
+                Abstract
+              </button>
+              <button onclick="toggleBlock('bib-2')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
+                BibTeX
+              </button>
+            </div>
+            <div id="abs-2" class="hidden pt-2 border-t border-hairline text-xs text-muted leading-relaxed">
+              We investigate the dynamical emergence of serial position curves in a competitive On-Center Off-Surround (OCOS) recurrent network augmented with time-varying self-excitation. Computational simulations demonstrate that varying the decay time constant of self-excitation accounts for both primacy and recency recall advantages within a single unified circuit mechanism.
+            </div>
+            <pre id="bib-2" class="hidden p-3 rounded bg-surface text-xs font-mono overflow-x-auto text-ink">@inproceedings{prasannah2025serial,
+  title={Modeling serial position effects in working memory using a recurrent on-center off-surround network with time-varying self-excitation},
+  author={Prasannah, Purvikalyani and Sengupta, Rakesh},
+  booktitle={Proceedings of the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)},
+  year={2025}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 4: CONFERENCES & PRESENTATIONS
+         =================================================================== -->
+    <section id="page-conferences" class="page-section">
+      <div class="border-b border-hairline pb-4 mb-8">
+        <h1 class="font-serif text-2xl font-bold text-ink">Conferences &amp; Presentations</h1>
+        <p class="text-sm text-muted mt-1">
+          National and international talks, poster presentations, and travel awards.
+        </p>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Conference 1 -->
+        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
+          <div class="text-xs font-mono text-muted">2026 · International</div>
+          <h2 class="font-serif text-base font-bold text-ink">
+            Annual Meeting of the Cognitive Science Society (CogSci 2026)
+          </h2>
+          <p class="text-sm text-ink/90">
+            Presented computational modeling findings on time-varying self-excitation in On-Center Off-Surround (OCOS) networks and emergent serial position dynamics to the international cognitive science community.
+          </p>
+        </div>
+
+        <!-- Conference 2 -->
+        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
+          <div class="text-xs font-mono text-muted">2026 · National</div>
+          <h2 class="font-serif text-base font-bold text-ink">
+            Annual Convention of the National Academy of Psychology (NAoP 2026)
+          </h2>
+          <p class="text-sm text-ink/90">
+            Presented behavioral PsychoPy research (<em>N</em> = 30) contrasting passive serial recall with active mental sorting across set sizes and stimulus categories in visual working memory.
+          </p>
+        </div>
+
+        <!-- Conference 3 -->
+        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
+          <div class="text-xs font-mono text-muted">2025 · International · Young Scientist DST Travel Grant</div>
+          <h2 class="font-serif text-base font-bold text-ink">
+            5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)
+          </h2>
+          <p class="text-sm text-ink/90">
+            Presented peer-reviewed paper on recurrent OCOS neural network dynamics; awarded the competitive <strong>Young Scientist DST Travel Grant</strong>.
+          </p>
+        </div>
+
+        <!-- EDIT: Copy any block above to add future conference presentations -->
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 5: COURSES & TEACHING ASSISTANTSHIPS
+         =================================================================== -->
+    <section id="page-courses" class="page-section">
+      <div class="border-b border-hairline pb-4 mb-8">
+        <h1 class="font-serif text-2xl font-bold text-ink">Courses &amp; Teaching</h1>
+        <p class="text-sm text-muted mt-1">
+          Interdisciplinary undergraduate curriculum and teaching assistantships at Krea University.
+        </p>
+      </div>
+
+      <!-- Teaching Assistantships -->
+      <div class="mb-10">
+        <h2 class="font-serif text-lg font-bold text-ink mb-4">Teaching Assistantships</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
+            <div class="text-xs font-mono text-accent">Teaching Assistant</div>
+            <h3 class="font-serif text-base font-bold text-ink">Fundamentals of Psychophysics</h3>
+            <p class="text-xs text-muted">PsychoPy · Experimental Design &amp; Behavioral Testing</p>
+            <p class="text-sm text-ink/90 pt-1">
+              Led PsychoPy programming tutorials and mentored undergraduate students in designing, piloting, and analyzing psychophysical experiments.
+            </p>
+          </div>
+
+          <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
+            <div class="text-xs font-mono text-accent">Teaching Assistant</div>
+            <h3 class="font-serif text-base font-bold text-ink">Data Analytics</h3>
+            <p class="text-xs text-muted">R Programming · Statistical Modeling</p>
+            <p class="text-sm text-ink/90 pt-1">
+              Assisted students with statistical inference, regression modeling, data wrangling, and reproducible analysis workflows in R.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Structured Coursework -->
+      <div>
+        <h2 class="font-serif text-lg font-bold text-ink mb-4">Selected Undergraduate Coursework</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+          
+          <!-- Column 1: Cognitive Science & Neuroscience -->
+          <div class="space-y-2">
+            <h3 class="font-serif text-xs font-bold uppercase tracking-wider text-muted border-b border-hairline pb-1.5">
+              Cognitive Science &amp; Neuroscience
+            </h3>
+            <ul class="space-y-1.5 text-ink/90">
+              <li>Systems &amp; Cognitive Neuroscience</li>
+              <li>Fundamentals of Psychophysics</li>
+              <li>Cognitive Psychology</li>
+              <li>Research Methods in Psychology</li>
+              <li>Undergraduate Capstone Thesis</li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Quantitative & Computational -->
+          <div class="space-y-2">
+            <h3 class="font-serif text-xs font-bold uppercase tracking-wider text-muted border-b border-hairline pb-1.5">
+              Computational &amp; Quantitative
+            </h3>
+            <ul class="space-y-1.5 text-ink/90">
+              <li>Programming for Psychologists (Python &amp; GNU Octave)</li>
+              <li>Data Science (Python &amp; Mathematical Foundations)</li>
+              <li>Statistics &amp; Biostatistics</li>
+              <li>Data Analytics in R</li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Chemistry Concentration -->
+          <div class="space-y-2">
+            <h3 class="font-serif text-xs font-bold uppercase tracking-wider text-muted border-b border-hairline pb-1.5">
+              Chemistry Concentration
+            </h3>
+            <ul class="space-y-1.5 text-ink/90">
+              <li>Analytical Chemistry</li>
+              <li>Physical &amp; Organic Chemistry</li>
+              <li>Quantitative Laboratory Instrumentation</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 6: WORKSHOPS & TECHNICAL TRAINING
+         =================================================================== -->
+    <section id="page-workshops" class="page-section">
+      <div class="border-b border-hairline pb-4 mb-8">
+        <h1 class="font-serif text-2xl font-bold text-ink">Workshops &amp; Training</h1>
+        <p class="text-sm text-muted mt-1">
+          Specialized workshops, neuroimaging training, and computational methods bootcamps.
+        </p>
+      </div>
+
+      <div class="space-y-5 text-sm">
+        <!-- EDIT: Update or add your specific workshops, summer schools, and training sessions below -->
+        <div class="border-b border-hairline pb-4 flex flex-col sm:flex-row sm:justify-between gap-2">
+          <div>
+            <h2 class="font-serif text-base font-bold text-ink">64-Channel EEG Acquisition &amp; MNE-Python Analysis Pipeline</h2>
+            <p class="text-muted text-xs mt-0.5">Computational Cognition Laboratory, Krea University</p>
+            <p class="text-ink/90 mt-1.5">
+              Hands-on training in high-density EEG recording, artifact rejection (ICA), ERP extraction (CDA, P3b), time-frequency decomposition (beta oscillations), and Linear Mixed-Effects (LME) model-to-brain fitting.
+            </p>
+          </div>
+          <span class="font-mono text-xs text-muted shrink-0">2025–2026</span>
+        </div>
+
+        <div class="border-b border-hairline pb-4 flex flex-col sm:flex-row sm:justify-between gap-2">
+          <div>
+            <h2 class="font-serif text-base font-bold text-ink">Computational Neural Modeling in Python &amp; GNU Octave</h2>
+            <p class="text-muted text-xs mt-0.5">Krea University</p>
+            <p class="text-ink/90 mt-1.5">
+              Numerical integration of dynamical rate networks (Euler / Euler-Maruyama methods), eigenvalue stability analysis, and energy-function characterization of recurrent neural circuits.
+            </p>
+          </div>
+          <span class="font-mono text-xs text-muted shrink-0">2024–2025</span>
+        </div>
+
+        <div class="pb-2 flex flex-col sm:flex-row sm:justify-between gap-2">
+          <div>
+            <h2 class="font-serif text-base font-bold text-ink">Experimental Psychophysics &amp; Stimulus Control in PsychoPy</h2>
+            <p class="text-muted text-xs mt-0.5">Krea University</p>
+            <p class="text-ink/90 mt-1.5">
+              Millisecond-accurate visual and auditory stimulus presentation, staircase thresholding, and behavioral data pipelines.
+            </p>
+          </div>
+          <span class="font-mono text-xs text-muted shrink-0">2023–2024</span>
+        </div>
+
+        <!--
+          HOW TO ADD MORE WORKSHOPS:
+          Copy one of the <div class="border-b border-hairline pb-4 ..."> blocks above
+          and paste it right here with your workshop title, organizer, description, and year.
+        -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================================================================
+       MINIMALIST ACADEMIC FOOTER
+       ===================================================================== -->
+  <footer class="border-t border-hairline bg-paper mt-auto">
+    <div class="max-w-4xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted">
+      <p>&copy; <span id="year"></span> Purvikalyani Prasannah · Krea University</p>
+      <p>Hosted on GitHub Pages · Last updated November 2026</p>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       CLIENT-SIDE ROUTING & INTERACTION SCRIPT
+       ===================================================================== -->
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Valid page routes
+    const validRoutes = ['home', 'research', 'publications', 'conferences', 'courses', 'workshops'];
+
+    // Switch active page and update navigation styling + URL hash
+    function navigateTo(route) {
+      if (!validRoutes.includes(route)) route = 'home';
+
+      // Hide all sections, show selected section
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      const target = document.getElementById('page-' + route);
+      if (target) target.classList.add('active');
+
+      // Update active nav link
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('data-route') === route);
+      });
+
+      // Scroll smoothly to top on page switch
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Handle direct hash links (e.g. yoursite.github.io/#publications)
+    window.addEventListener('hashchange', () => {
+      const hashRoute = window.location.hash.replace('#', '');
+      if (validRoutes.includes(hashRoute)) {
+        navigateTo(hashRoute);
+      }
+    });
+
+    // Initialize route on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const initialHash = window.location.hash.replace('#', '');
+      navigateTo(validRoutes.includes(initialHash) ? initialHash : 'home');
+    });
+
+    // Toggle Abstract / BibTeX drawers on Publications page
+    function toggleBlock(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden');
+    }
+
+    // Smart CV Download: opens cv.pdf if uploaded to repo, otherwise prints clean full-CV PDF
+    function handleCVDownload(event) {
+      // Check if cv.pdf exists on the server; if not, trigger clean print-to-PDF layout
+      fetch('cv.pdf', { method: 'HEAD' })
+        .then(response => {
+          if (!response.ok) {
+            event.preventDefault();
+            window.print();
+          }
+        })
+        .catch(() => {
+          event.preventDefault();
+          window.print();
+        });
+    }
+  </script>
+</body>
+</html>
