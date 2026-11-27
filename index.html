@@ -168,13 +168,12 @@
             My research explores how the human brain dynamically organizes transient sensory inputs into structured internal representations across space and time. To bridge algorithmic theories and their biological implementations, I combine <strong>recurrent neural network modeling</strong> (On-Center Off-Surround and bump-attractor dynamics), <strong>human electrophysiology</strong> (64-channel EEG-ERP and oscillatory analysis), and <strong>behavioral psychophysics</strong>.
           </p>
 
-          <!-- Action Buttons: Download CV & Links -->
+          <!-- Action Buttons: Download CV & Links (ORCID & LinkedIn) -->
           <div class="pt-2 flex flex-wrap items-center gap-3 no-print">
             <!--
               HOW TO ATTACH YOUR PDF CV ON GITHUB:
               1. Upload a file named "cv.pdf" into the same folder as index.html on GitHub.
-              2. Change onclick="handleCVDownload(event)" to simply let the browser open cv.pdf,
-                 or keep this smart handler which checks for cv.pdf and falls back to clean PDF print!
+              2. Clicking this button automatically opens cv.pdf if uploaded, or formats the webpage into a printable PDF.
             -->
             <a href="cv.pdf" onclick="handleCVDownload(event)" class="inline-flex items-center gap-2 px-4 py-2 rounded border border-accent bg-accent text-white text-sm font-medium hover:bg-accentHover transition-colors">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
@@ -183,35 +182,27 @@
               Download CV (PDF)
             </a>
 
-            <!-- EDIT: Paste your actual ORCID URL inside href="..." below -->
+            <!-- EDIT: Replace with your ORCID profile URL if needed -->
             <a href="https://orcid.org/0009-0006-9192-0831" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
               <span class="inline-block w-2 h-2 rounded-full bg-[#a6ce39]"></span>
               ORCID
             </a>
 
-            <!-- EDIT: Paste your actual LinkedIn URL inside href="..." below -->
+            <!-- EDIT: Paste your LinkedIn profile URL inside href="..." below -->
             <a href="https://www.linkedin.com/in/purvikalyani" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
               <svg class="w-3.5 h-3.5 text-[#0a66c2]" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
               </svg>
               LinkedIn
             </a>
-
-            <!-- Optional: GitHub Profile Link -->
-            <!-- <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded border border-hairline bg-white text-ink text-sm hover:border-accent hover:text-accent transition-colors">
-              GitHub
-            </a>
-          </div> -->
+          </div>
         </div>
 
         <!-- Right Column: Profile Photo Slot & Contact Box (4 cols) -->
         <div class="md:col-span-4 space-y-6">
           
           <!-- ===============================================================
-               EDIT: PROFILE PHOTO SLOT
-               To add your photo:
-               1. Upload your photo (e.g., "profile.jpg") to your GitHub repo.
-               2. Replace src="" below with src="profile.jpg"
+               PROFILE PHOTO SLOT (Configured to load "profile.jpg" from repo)
                =============================================================== -->
           <div class="w-44 md:w-full max-w-[220px] mx-auto md:mx-0">
             <div class="aspect-[4/5] rounded border border-hairline bg-surface overflow-hidden flex flex-col items-center justify-center text-center p-4 relative">
@@ -220,15 +211,15 @@
                 src="profile.jpg" 
                 alt="Purvikalyani Prasannah"
                 onload="this.classList.remove('hidden'); document.getElementById('photo-placeholder').classList.add('hidden');"
-                onerror="this.classList.add('hidden');"
-                class="hidden w-full h-full object-cover absolute inset-0"
+                onerror="this.classList.add('hidden'); document.getElementById('photo-placeholder').classList.remove('hidden');"
+                class="w-full h-full object-cover absolute inset-0"
               />
-              <div id="photo-placeholder" class="text-muted space-y-1.5">
+              <div id="photo-placeholder" class="hidden text-muted space-y-1.5">
                 <svg class="w-8 h-8 mx-auto text-muted/60" fill="none" stroke="currentColor" stroke-width="1.3" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                 </svg>
-                <p class="text-xs font-medium">Photo Placeholder</p>
-                <p class="text-[11px] leading-tight text-muted/80">Add <code>profile.jpg</code> to repo &amp; set <code>src="profile.jpg"</code></p>
+                <p class="text-xs font-medium">Profile Photo</p>
+                <p class="text-[11px] leading-tight text-muted/80">Ensure <code>profile.jpg</code> is uploaded in the root repository folder.</p>
               </div>
             </div>
           </div>
@@ -237,7 +228,6 @@
           <div class="border-t border-hairline pt-4 space-y-2.5 text-sm">
             <h2 class="font-serif text-sm font-bold uppercase tracking-wider text-muted">Contact</h2>
             <p class="text-ink">
-              <!-- EDIT: Replace with your preferred academic email -->
               <span class="block text-xs text-muted">Email</span>
               <a href="mailto:purvikalyani.prasannah@krea.ac.in" class="text-accent hover:underline break-all">
                 purvikalyani.prasannah@krea.ac.in
@@ -259,7 +249,11 @@
         <ul class="space-y-3 text-sm">
           <!-- EDIT: Add or update news items chronologically -->
           <li class="flex flex-col sm:flex-row sm:gap-4">
-            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">2026</span>
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">Dec 2026</span>
+            <span>Presenting two works at the <strong>13th Annual Conference of Cognitive Science (ACCS 13)</strong> at the University of Hyderabad (12–14 December): <em>“Hearing Time Vs Seeing Time: Through the Lens of Start and End Alignment”</em> and <em>“Modeling Recurrent Neural Networks in Serial Recall Paradigm with Dynamic Self-Excitation”</em>.</span>
+          </li>
+          <li class="flex flex-col sm:flex-row sm:gap-4">
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">Nov 2026</span>
             <span>Released preprint <em>“From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory”</em> with Dr. Rakesh Sengupta.</span>
           </li>
           <li class="flex flex-col sm:flex-row sm:gap-4">
@@ -267,7 +261,7 @@
             <span>Presented computational OCOS serial-recall modeling at <strong>CogSci 2026</strong> and visual working memory mental sorting findings at <strong>NAoP 2026</strong>.</span>
           </li>
           <li class="flex flex-col sm:flex-row sm:gap-4">
-            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">2025–2026</span>
+            <span class="font-mono text-xs text-muted w-24 shrink-0 pt-0.5">Dec 2025</span>
             <span>Awarded the <strong>Young Scientist DST Travel Grant</strong> for presenting peer-reviewed neural modeling research at the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC).</span>
           </li>
         </ul>
@@ -275,111 +269,149 @@
     </section>
 
     <!-- ===================================================================
-         PAGE 2: RESEARCH PROJECTS (With Editable Figure / Image Slots)
+         PAGE 2: RESEARCH PROJECTS (Detailed Methods, Results & Image Slots)
          =================================================================== -->
     <section id="page-research" class="page-section">
       <div class="border-b border-hairline pb-4 mb-8">
         <h1 class="font-serif text-2xl font-bold text-ink">Research Projects</h1>
         <p class="text-sm text-muted mt-1">
-          Computational neural modeling, human electrophysiology (EEG), and behavioral psychophysics.
+          Computational neural modeling, human electrophysiology (EEG), behavioral psychophysics, and bilingual embodied cognition.
         </p>
       </div>
 
       <div class="space-y-10">
 
-        <!-- PROJECT 1 -->
+        <!-- PROJECT 1: Capstone Thesis -->
         <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div class="md:col-span-8 space-y-2.5">
-            <div class="text-xs font-mono uppercase tracking-wider text-accent">Undergraduate Capstone Thesis · 2025–2026</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Undergraduate Capstone Thesis · May 2026 – Present</div>
             <h2 class="font-serif text-lg font-bold text-ink">
               Unified OCOS Modeling &amp; 64-Channel EEG Dynamics of Visual Working Memory Stability
             </h2>
-            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta · Methods: Python, MNE-Python, 64-Channel EEG, Linear Mixed-Effects (LME)</p>
+            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta (Krea University) · Methods: Python, MNE-Python, 64-Channel EEG, Linear Mixed-Effects (LME)</p>
             <p class="text-sm text-ink/90">
-              Developing a unified On-Center Off-Surround (OCOS) network model integrating dynamic self-excitation and distance-dependent lateral inhibition to account for visual working memory (VWM) stability boundaries and the von Restorff isolation effect. Empirically testing model predictions against 64-channel human EEG data (<em>N</em> = 20)—analyzing Contralateral Delay Activity (CDA), P3b, and beta-band oscillations via MNE-Python and LME model-to-brain fitting.
+              Developing a unified recurrent On-Center Off-Surround (OCOS) network model integrating dynamic self-excitation and distance-dependent lateral inhibition to simulate visual working memory (VWM) stability boundaries and the von Restorff isolation effect. Empirical validation combines a 64-channel human EEG paradigm (<em>N</em> = 20; analyzing Contralateral Delay Activity [CDA], P3b, and beta-band oscillations via MNE-Python) with Linear Mixed-Effects (LME) model-to-brain fitting to quantitatively link computational parameters to neural markers.
             </p>
           </div>
-          <!-- EDIT: Project 1 Image Slot — Upload an image (e.g., "fig_capstone.png") and set src="fig_capstone.png" -->
+          <!-- EDIT: Project 1 Image Slot — Upload "fig_capstone.png" to your repo -->
           <div class="md:col-span-4 image-placeholder-box">
             <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
-              <img src="" alt="Capstone EEG & OCOS Model Figure" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <img src="fig_capstone.png" alt="Capstone EEG & OCOS Model Figure" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
               <div class="text-muted">
                 <p class="text-xs font-medium">Figure Slot 1</p>
-                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_capstone.png"</code> to display EEG / model plot</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>fig_capstone.png</code> to display EEG / model plot</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 2 -->
+        <!-- PROJECT 2: OCOS to Bump Attractors Preprint -->
         <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
           <div class="md:col-span-8 space-y-2.5">
-            <div class="text-xs font-mono uppercase tracking-wider text-accent">Computational Theory · 2025–2026</div>
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Computational Theory · 2026</div>
             <h2 class="font-serif text-lg font-bold text-ink">
               From Local Competition to Bump Attractors: Excitation Width, Capacity &amp; Lattice Locking
             </h2>
-            <p class="text-xs text-muted">Collaborator: Dr. Rakesh Sengupta · Methods: Dynamical Systems, Energy-Function Formalism, Numerical Continuation</p>
+            <p class="text-xs text-muted">Collaborator: Dr. Rakesh Sengupta · Methods: Dynamical Systems, Energy-Function Hessian Formalism</p>
             <p class="text-sm text-ink/90">
               Placed discrete OCOS networks and continuous bump attractors into a single parameterized family governed by recurrent excitation width at fixed total excitation. Derived closed-form stability and capacity bounds for the narrow limit and demonstrated that widening excitation trades capacity and noise resistance for spatial continuity—while revealing that a subthreshold recruitment margin at item edges (&rho; = 0.91) governs lattice locking versus memory capture by new inputs.
             </p>
           </div>
-          <!-- EDIT: Project 2 Image Slot -->
+          <!-- EDIT: Project 2 Image Slot — Upload "fig_attractor.png" to your repo -->
           <div class="md:col-span-4 image-placeholder-box">
             <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
-              <img src="" alt="OCOS to Bump Attractor Phase Diagram" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <img src="fig_attractor.png" alt="OCOS to Bump Attractor Phase Diagram" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
               <div class="text-muted">
                 <p class="text-xs font-medium">Figure Slot 2</p>
-                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_attractor.png"</code> to display stability curves</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>fig_attractor.png</code> to display stability curves</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 3 -->
+        <!-- PROJECT 3: Time-Varying Self-Excitation & Serial Position Curves (Updated with ANTIC 2025 Methods & Results) -->
         <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-          <div class="md:col-span-8 space-y-2.5">
-            <div class="text-xs font-mono uppercase tracking-wider text-accent">Recurrent Neural Modeling · 2024–2025</div>
+          <div class="md:col-span-8 space-y-3">
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Recurrent Neural Modeling · 2024 – 2026</div>
             <h2 class="font-serif text-lg font-bold text-ink">
               Time-Varying Self-Excitation &amp; Serial Position Curves in Working Memory
             </h2>
-            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta · Methods: GNU Octave, Python, Dynamical Rate Networks</p>
-            <p class="text-sm text-ink/90">
-              Simulated a recurrent OCOS architecture incorporating time-varying self-excitation across sequential item presentation. Showed that modulating the decay constant of self-excitation systematically reproduces classic primacy and recency serial position effects without requiring separate short- and long-term memory stores.
-            </p>
+            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta (Krea University) · Published in Springer CCIS (ANTIC 2025) &amp; Presented at CogSci 2026 / ACCS 13</p>
+            
+            <div class="space-y-2 text-sm text-ink/90">
+              <p>
+                <strong>Methods &amp; Analytical Framework:</strong> Simulated a fully connected <em>N</em> = 70 single-layer recurrent On-Center Off-Surround (OCOS) network over 10,000 ms using a piecewise time-varying self-excitation function &alpha;(<em>t</em>) that ramps linearly at slope &kappa; during stimulus input and decays exponentially with time constant &tau; after offset. Derived exact homogeneous steady-state existence criteria (&alpha; &minus; &beta;(<em>N</em> &minus; 1) &gt; &lambda;), global contraction bounds (&alpha; + &beta; &le; &lambda;), and Jacobian/Lyapunov linear stability eigenmodes (&lambda;<sub>1</sub> uniform activity mode and &lambda;<sub>2</sub> transverse symmetry-breaking modes). Final activations were mapped to recall probabilities via a logistic readout (&gamma; = 5, &theta; = 0.5) across 8-item serial recall sequences and four presentation durations (<code>nstim</code> &isin; {100, 200, 400, 800} time-steps; <em>T</em> = 50 independent trials per rate).
+              </p>
+              <p>
+                <strong>Simulation &amp; Statistical Results:</strong> Modulating the post-input decay constant &tau; smoothly transitioned serial position curves from strongly recency-dominated (&tau; = 500 ms) to balanced/bimodal (&tau; = 1000–1250 ms) to primacy-dominated (&tau; = 1500 ms), while lateral inhibition &beta; &isin; {0.05, 0.10, 0.15} governed the trade-off between coactive capacity and convergence speed. The model also replicated the classic Waugh &amp; Norman presentation-rate effect, exhibiting a robust monotonic negative trend between per-item duration and the Primacy/Recency Index (Pearson <em>r</em> = &minus;0.9395, <em>p</em> = 0.0605; 1,000-sample bootstrap 95% CI [&minus;1.0000, &minus;0.8615]; linear regression slope = &minus;0.0024, bootstrap 95% CI [&minus;0.0053, &minus;0.0010]).
+              </p>
+            </div>
           </div>
-          <!-- EDIT: Project 3 Image Slot -->
+          <!-- EDIT: Project 3 Image Slot — Upload "fig_serial.png" to your repo -->
           <div class="md:col-span-4 image-placeholder-box">
             <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
-              <img src="" alt="Serial Position Curve Simulation" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <img src="fig_serial.png" alt="Serial Position Curve Simulation" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
               <div class="text-muted">
                 <p class="text-xs font-medium">Figure Slot 3</p>
-                <p class="text-[11px] text-muted/80 mt-0.5">Set <code>src="fig_serial.png"</code> to display recall simulation</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>fig_serial.png</code> to display recall simulation</p>
               </div>
             </div>
           </div>
         </article>
 
-        <!-- PROJECT 4 -->
-        <article class="border-b border-hairline pb-8 space-y-2">
-          <div class="text-xs font-mono uppercase tracking-wider text-accent">Behavioral Psychophysics · 2025–2026</div>
+        <!-- PROJECT 4: Cross-Modal Time Perception (Separated Project with Detailed Methods & Results) -->
+        <article class="border-b border-hairline pb-8 grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+          <div class="md:col-span-8 space-y-3">
+            <div class="text-xs font-mono uppercase tracking-wider text-accent">Behavioral Psychophysics · Jan 2025 – Mar 2025</div>
+            <h2 class="font-serif text-lg font-bold text-ink">
+              Hearing Time vs. Seeing Time: Cross-Modal Temporal Discrimination Across Start and End Alignment
+            </h2>
+            <p class="text-xs text-muted">Advisor: Dr. Rakesh Sengupta (Krea University) · Presented at ACCS 13 (University of Hyderabad, Dec 2026)</p>
+            
+            <div class="space-y-2 text-sm text-ink/90">
+              <p>
+                <strong>Methods:</strong> Recruited <em>N</em> = 20 participants (aged 18–30) in a two-alternative forced-choice (2-AFC) psychophysical paradigm comparing paired visual (white square) and auditory (pure tone) stimuli across five durations (0.18, 0.27, 0.36, 0.45, and 0.54 s). Across 120 randomized trials per participant (ITI: 0.95–1.05 s), stimulus pairs were either <em>start-aligned</em> (simultaneous onset) or <em>end-aligned</em> (simultaneous offset), and participants judged which modality lasted longer.
+              </p>
+              <p>
+                <strong>Key Results:</strong> Across 2,450 trials (mean accuracy = 0.70, mean RT = 0.96 s), paired-samples <em>t</em>-tests showed significantly higher discrimination accuracy for end-aligned stimuli (<em>M</em> = 0.72) than start-aligned stimuli (<em>M</em> = 0.68; <em>t</em> = &minus;2.26, <em>p</em> = 0.0242), peaking on end-aligned auditory-longer trials (0.756) versus start-aligned visual-longer trials (0.616). Accuracy scaled monotonically with absolute duration difference (psychometric slope &beta; = 0.796, <em>p</em> &lt; .001) and replicated auditory dominance (<em>M</em> = 0.75 when auditory &gt; visual vs. <em>M</em> = 0.64 when visual &gt; auditory; <em>t</em> = 2.66, <em>p</em> = 0.015), indicating that shared offsets avoid competing onset transients and visual sensory adaptation.
+              </p>
+            </div>
+          </div>
+          <!-- EDIT: Project 4 Image Slot — Upload "fig_time.png" to your repo -->
+          <div class="md:col-span-4 image-placeholder-box">
+            <div class="aspect-[16/10] rounded border border-hairline bg-surface flex flex-col items-center justify-center p-3 text-center relative overflow-hidden">
+              <img src="fig_time.png" alt="Cross-Modal Time Perception Psychometric Plot" onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" onerror="this.classList.add('hidden');" class="hidden w-full h-full object-cover absolute inset-0" />
+              <div class="text-muted">
+                <p class="text-xs font-medium">Figure Slot 4</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>fig_time.png</code> to display alignment accuracy plot</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5: Embodied Cognition in Tamil-English Bilinguals (Separated Project) -->
+        <article class="border-b border-hairline pb-8 space-y-2.5">
+          <div class="text-xs font-mono uppercase tracking-wider text-accent">Embodied &amp; Bilingual Cognition · Jan 2025 – Present</div>
           <h2 class="font-serif text-lg font-bold text-ink">
-            Active Mental Manipulation vs. Passive Maintenance in Visual Working Memory
+            Embodied Cognition and Early-Learned Verbs in Tamil–English Bilingual Speakers
           </h2>
-          <p class="text-xs text-muted">Methods: PsychoPy, Statistical Modeling in R (<em>N</em> = 30) · Presented at NAoP 2026</p>
+          <p class="text-xs text-muted">
+            Mentors: Dr. Madhavilatha Maganti (Krea University), Dr. Nitya Sethuraman (University of Michigan–Dearborn), and Dr. Josita Maouene (Grand Valley State University, USA)
+          </p>
           <p class="text-sm text-ink/90">
-            Designed a psychophysical paradigm contrasting passive serial recall against active mental sorting across varying set sizes and stimulus categories, demonstrating that active manipulation imposes significantly steeper load-dependent costs on recall accuracy and reaction time than maintenance alone.
+            Investigating semantic and sensorimotor associations between early-learned verbs and body parts alongside generational shifts in Tamil–English bilingual speakers. Conducted and analyzed in-person structured qualitative interviews across a cohort of <em>N</em> = 80 younger and older adult bilingual participants.
           </p>
         </article>
 
-        <!-- PROJECT 5 -->
+        <!-- PROJECT 6: Active Mental Manipulation vs Passive Maintenance -->
         <article class="space-y-2">
-          <div class="text-xs font-mono uppercase tracking-wider text-accent">Time Perception &amp; Embodied Cognition · 2023–2024</div>
+          <div class="text-xs font-mono uppercase tracking-wider text-accent">Behavioral Psychophysics · 2025 – 2026</div>
           <h2 class="font-serif text-lg font-bold text-ink">
-            Cross-Modal Temporal Perception &amp; Embodied Timing in Percussionists
+            Sorting and Recall: Cognitive Load and Active Manipulation in Visual Working Memory
           </h2>
-          <p class="text-xs text-muted">Methods: Psychophysics, Mixed Quantitative–Qualitative Analysis</p>
+          <p class="text-xs text-muted">Methods: PsychoPy, Statistical Modeling in R (<em>N</em> = 30) · Presented at NAoP 2026</p>
           <p class="text-sm text-ink/90">
-            Investigated temporal interval estimation across visual and auditory modalities, followed by a mixed-methods study examining how bodily, motor, and contextual constraints shape subjective time perception in trained percussionists.
+            Designed a psychophysical paradigm contrasting passive serial recall against active mental sorting across varying set sizes and stimulus categories, demonstrating that active manipulation imposes significantly steeper load-dependent costs on recall accuracy and reaction time than passive maintenance alone.
           </p>
         </article>
 
@@ -404,7 +436,7 @@
           
           <div class="border border-hairline rounded bg-white p-5 space-y-3">
             <p class="text-[15px] leading-relaxed">
-              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2026). From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory. <em>Preprint, Computational Cognition Laboratory, Krea University</em>.
+              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2026). From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory. <em>arXiv:2611.28601 [q-bio.NC]</em>.
             </p>
             <div class="flex flex-wrap gap-3 text-xs no-print">
               <button onclick="toggleBlock('abs-1')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
@@ -413,9 +445,8 @@
               <button onclick="toggleBlock('bib-1')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
                 BibTeX
               </button>
-              <!-- EDIT: Add link to arXiv/bioRxiv/OSF PDF when uploaded -->
-              <a href="#publications" class="px-2.5 py-1 rounded border border-hairline text-muted hover:text-accent transition-colors">
-                Preprint PDF (Coming Soon)
+              <a href="https://doi.org/10.48550/arXiv.2611.28601" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded border border-hairline text-accent hover:border-accent transition-colors">
+                arXiv DOI &nearr;
               </a>
             </div>
             <div id="abs-1" class="hidden pt-2 border-t border-hairline text-xs text-muted leading-relaxed">
@@ -424,8 +455,8 @@
             <pre id="bib-1" class="hidden p-3 rounded bg-surface text-xs font-mono overflow-x-auto text-ink">@article{prasannah2026local,
   title={From local competition to bump attractors: how excitation width sets capacity, interference and updating in recurrent models of visual working memory},
   author={Prasannah, Purvikalyani and Sengupta, Rakesh},
-  year={2026},
-  note={Preprint, Computational Cognition Laboratory, Krea University}
+  journal={arXiv preprint arXiv:2611.28601},
+  year={2026}
 }</pre>
           </div>
         </div>
@@ -436,7 +467,7 @@
           
           <div class="border border-hairline rounded bg-white p-5 space-y-3">
             <p class="text-[15px] leading-relaxed">
-              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2025). Modeling serial position effects in working memory using a recurrent on-center off-surround network with time-varying self-excitation. In <em>Proceedings of the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)</em>.
+              <strong>Prasannah, P.</strong>, &amp; Sengupta, R. (2026). Modeling Recurrent Neural Networks in Serial Recall Paradigm With Dynamic Self-Excitation. In <em>Advanced Network Technologies and Intelligent Computing (ANTIC 2025)</em>, Communications in Computer and Information Science, vol. 2921, Springer, Cham.
             </p>
             <div class="flex flex-wrap gap-3 text-xs no-print">
               <button onclick="toggleBlock('abs-2')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
@@ -445,15 +476,22 @@
               <button onclick="toggleBlock('bib-2')" class="px-2.5 py-1 rounded border border-hairline hover:border-accent hover:text-accent transition-colors">
                 BibTeX
               </button>
+              <a href="https://doi.org/10.1007/978-3-032-27117-4_16" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1 rounded border border-hairline text-accent hover:border-accent transition-colors">
+                Springer DOI &nearr;
+              </a>
             </div>
             <div id="abs-2" class="hidden pt-2 border-t border-hairline text-xs text-muted leading-relaxed">
               We investigate the dynamical emergence of serial position curves in a competitive On-Center Off-Surround (OCOS) recurrent network augmented with time-varying self-excitation. Computational simulations demonstrate that varying the decay time constant of self-excitation accounts for both primacy and recency recall advantages within a single unified circuit mechanism.
             </div>
-            <pre id="bib-2" class="hidden p-3 rounded bg-surface text-xs font-mono overflow-x-auto text-ink">@inproceedings{prasannah2025serial,
-  title={Modeling serial position effects in working memory using a recurrent on-center off-surround network with time-varying self-excitation},
+            <pre id="bib-2" class="hidden p-3 rounded bg-surface text-xs font-mono overflow-x-auto text-ink">@inproceedings{prasannah2026serial,
+  title={Modeling Recurrent Neural Networks in Serial Recall Paradigm With Dynamic Self-Excitation},
   author={Prasannah, Purvikalyani and Sengupta, Rakesh},
-  booktitle={Proceedings of the 5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)},
-  year={2025}
+  booktitle={Advanced Network Technologies and Intelligent Computing (ANTIC 2025)},
+  series={Communications in Computer and Information Science},
+  volume={2921},
+  publisher={Springer, Cham},
+  year={2026},
+  doi={10.1007/978-3-032-27117-4_16}
 }</pre>
           </div>
         </div>
@@ -461,56 +499,166 @@
     </section>
 
     <!-- ===================================================================
-         PAGE 4: CONFERENCES & PRESENTATIONS
+         PAGE 4: CONFERENCES & PRESENTATIONS (With Figure Slots & Captions)
          =================================================================== -->
     <section id="page-conferences" class="page-section">
       <div class="border-b border-hairline pb-4 mb-8">
         <h1 class="font-serif text-2xl font-bold text-ink">Conferences &amp; Presentations</h1>
         <p class="text-sm text-muted mt-1">
-          National and international talks, poster presentations, and travel awards.
+          National and international talks, poster presentations, session chairing, and travel awards.
         </p>
       </div>
 
-      <div class="space-y-6">
-        <!-- Conference 1 -->
-        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
-          <div class="text-xs font-mono text-muted">2026 · International</div>
-          <h2 class="font-serif text-base font-bold text-ink">
-            Annual Meeting of the Cognitive Science Society (CogSci 2026)
-          </h2>
-          <p class="text-sm text-ink/90">
-            Presented computational modeling findings on time-varying self-excitation in On-Center Off-Surround (OCOS) networks and emergent serial position dynamics to the international cognitive science community.
-          </p>
+      <div class="space-y-10">
+
+        <!-- Conference 1: ACCS 13 (University of Hyderabad, Dec 12-14, 2026) -->
+        <div class="border-l-2 border-accent pl-5 py-1 space-y-3">
+          <div>
+            <div class="text-xs font-mono text-muted">12–14 December 2026 · University of Hyderabad, India</div>
+            <h2 class="font-serif text-base font-bold text-ink">
+              13th Annual Conference of Cognitive Science (ACCS 13)
+            </h2>
+            <p class="text-sm text-ink/90 mt-1">
+              Presenting two accepted works:
+            </p>
+            <ul class="list-disc list-inside text-sm text-ink/90 mt-1 space-y-1">
+              <li><em>“Hearing Time Vs Seeing Time: Through the Lens of Start and End Alignment”</em></li>
+              <li><em>“Modeling Recurrent Neural Networks in Serial Recall Paradigm with Dynamic Self-Excitation”</em></li>
+            </ul>
+          </div>
         </div>
 
-        <!-- Conference 2 -->
-        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
-          <div class="text-xs font-mono text-muted">2026 · National</div>
-          <h2 class="font-serif text-base font-bold text-ink">
-            Annual Convention of the National Academy of Psychology (NAoP 2026)
-          </h2>
-          <p class="text-sm text-ink/90">
-            Presented behavioral PsychoPy research (<em>N</em> = 30) contrasting passive serial recall with active mental sorting across set sizes and stimulus categories in visual working memory.
-          </p>
+        <!-- Conference 2: CogSci 2026 -->
+        <div class="border-l-2 border-accent pl-5 py-1 space-y-3">
+          <div>
+            <div class="text-xs font-mono text-muted">July 2026 · Rio de Janeiro, Brazil (Hybrid)</div>
+            <h2 class="font-serif text-base font-bold text-ink">
+              Annual Meeting of the Cognitive Science Society (CogSci 2026)
+            </h2>
+            <p class="text-sm text-ink/90 mt-1">
+              Delivered flash talk titled <em>“Modeling Recurrent Neural Networks in Serial Recall Paradigm With Dynamic Self-Excitation”</em> and served as <strong>Session Chair</strong>. Published in the <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em> (<a href="https://escholarship.org/uc/item/5h16d3ht" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">escholarship.org/uc/item/5h16d3ht</a>).
+            </p>
+          </div>
+
+          <!-- EDIT: CogSci 2026 Figure & Message Slot — Upload "cogsci2026_fig.jpg" to your repo -->
+          <figure class="max-w-lg rounded border border-hairline bg-white overflow-hidden image-placeholder-box">
+            <div class="aspect-[16/10] bg-surface flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+              <img 
+                src="cogsci2026_fig.jpg" 
+                alt="CogSci 2026 Flash Talk & Session Chair" 
+                onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" 
+                onerror="this.classList.add('hidden');" 
+                class="hidden w-full h-full object-cover absolute inset-0" 
+              />
+              <div class="text-muted">
+                <p class="text-xs font-medium">CogSci 2026 Figure / Slide Slot</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>cogsci2026_fig.jpg</code> to your GitHub repo to display here</p>
+              </div>
+            </div>
+            <!-- EDIT: Customize your message/caption below -->
+            <figcaption class="px-3.5 py-2.5 text-xs text-muted border-t border-hairline bg-white">
+              Flash talk participation at CogSci 2026 (Rio de Janeiro / Hybrid).
+            </figcaption>
+          </figure>
         </div>
 
-        <!-- Conference 3 -->
-        <div class="border-l-2 border-accent pl-4 py-1 space-y-1">
-          <div class="text-xs font-mono text-muted">2025 · International · Young Scientist DST Travel Grant</div>
-          <h2 class="font-serif text-base font-bold text-ink">
-            5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)
-          </h2>
-          <p class="text-sm text-ink/90">
-            Presented peer-reviewed paper on recurrent OCOS neural network dynamics; awarded the competitive <strong>Young Scientist DST Travel Grant</strong>.
-          </p>
+        <!-- Conference 3: NAoP 2026 -->
+        <div class="border-l-2 border-accent pl-5 py-1 space-y-3">
+          <div>
+            <div class="text-xs font-mono text-muted">April 2026 · IIM Shillong, India</div>
+            <h2 class="font-serif text-base font-bold text-ink">
+              35th Convention of the National Academy of Psychology (NAoP 2026)
+            </h2>
+            <p class="text-sm text-ink/90 mt-1">
+              Presented behavioral PsychoPy research titled <em>“Sorting and Recall: Understanding Cognitive Load and Manipulation of Information in VWM”</em> (<em>N</em> = 30), contrasting passive serial recall with active mental sorting across set sizes and stimulus categories.
+            </p>
+          </div>
+
+          <!-- EDIT: NAoP 2026 Figure & Message Slot — Upload "naop2026_fig.jpg" to your repo -->
+          <figure class="max-w-lg rounded border border-hairline bg-white overflow-hidden image-placeholder-box">
+            <div class="aspect-[16/10] bg-surface flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+              <img 
+                src="naop2026_fig.jpg" 
+                alt="35th NAoP Convention at IIM Shillong" 
+                onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" 
+                onerror="this.classList.add('hidden');" 
+                class="hidden w-full h-full object-cover absolute inset-0" 
+              />
+              <div class="text-muted">
+                <p class="text-xs font-medium">NAoP 2026 Figure / Photo Slot</p>
+                <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>naop2026_fig.jpg</code> to your GitHub repo to display here</p>
+              </div>
+            </div>
+            <!-- EDIT: Customize your message/caption below -->
+            <figcaption class="px-3.5 py-2.5 text-xs text-muted border-t border-hairline bg-white">
+              Presenting visual working memory sorting and cognitive load findings at the 35th NAoP Convention, IIM Shillong.
+            </figcaption>
+          </figure>
         </div>
 
-        <!-- EDIT: Copy any block above to add future conference presentations -->
+        <!-- Conference 4: ANTIC 2025 (With TWO Side-by-Side Picture & Message Slots) -->
+        <div class="border-l-2 border-accent pl-5 py-1 space-y-3">
+          <div>
+            <div class="text-xs font-mono text-muted">December 2025 · ABV-IIITM Gwalior, India · Young Scientist DST Travel Grant</div>
+            <h2 class="font-serif text-base font-bold text-ink">
+              5th International Conference on Advanced Network Technologies and Intelligent Computing (ANTIC)
+            </h2>
+            <p class="text-sm text-ink/90 mt-1">
+              Presented peer-reviewed paper titled <em>“Modeling Recurrent Neural Networks in Serial Recall Paradigm With Dynamic Self-Excitation”</em>; awarded the competitive <strong>Young Scientist DST Travel Grant</strong>.
+            </p>
+          </div>
+
+          <!-- EDIT: ANTIC 2025 TWO-PICTURE GRID — Upload "antic2025_1.jpg" and "antic2025_2.jpg" to your repo -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1 image-placeholder-box">
+            <!-- ANTIC Picture 1 -->
+            <figure class="rounded border border-hairline bg-white overflow-hidden">
+              <div class="aspect-[16/10] bg-surface flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+                <img 
+                  src="antic2025_1.jpg" 
+                  alt="ANTIC 2025 Presentation Photo 1" 
+                  onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" 
+                  onerror="this.classList.add('hidden');" 
+                  class="hidden w-full h-full object-cover absolute inset-0" 
+                />
+                <div class="text-muted">
+                  <p class="text-xs font-medium">ANTIC 2025 Photo 1</p>
+                  <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>antic2025_1.jpg</code> to your GitHub repo</p>
+                </div>
+              </div>
+              <!-- EDIT: Customize message 1 below -->
+              <figcaption class="px-3.5 py-2.5 text-xs text-muted border-t border-hairline bg-white">
+                Presenting the recurrent OCOS serial recall model at ANTIC 2025, ABV-IIITM Gwalior.
+              </figcaption>
+            </figure>
+
+            <!-- ANTIC Picture 2 -->
+            <figure class="rounded border border-hairline bg-white overflow-hidden">
+              <div class="aspect-[16/10] bg-surface flex flex-col items-center justify-center p-4 text-center relative overflow-hidden">
+                <img 
+                  src="antic2025_2.jpg" 
+                  alt="ANTIC 2025 Young Scientist DST Travel Grant Photo 2" 
+                  onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" 
+                  onerror="this.classList.add('hidden');" 
+                  class="hidden w-full h-full object-cover absolute inset-0" 
+                />
+                <div class="text-muted">
+                  <p class="text-xs font-medium">ANTIC 2025 Photo 2</p>
+                  <p class="text-[11px] text-muted/80 mt-0.5">Upload <code>antic2025_2.jpg</code> to your GitHub repo</p>
+                </div>
+              </div>
+              <!-- EDIT: Customize message 2 below -->
+              <figcaption class="px-3.5 py-2.5 text-xs text-muted border-t border-hairline bg-white">
+                Received the Young Scientist DST Travel Grant recognition at ANTIC 2025.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ===================================================================
-         PAGE 5: COURSES & TEACHING ASSISTANTSHIPS
+         PAGE 5: COURSES & TEACHING ASSISTANTSHIPS (All 4 Roles from CV)
          =================================================================== -->
     <section id="page-courses" class="page-section">
       <div class="border-b border-hairline pb-4 mb-8">
@@ -520,27 +668,51 @@
         </p>
       </div>
 
-      <!-- Teaching Assistantships -->
+      <!-- Teaching Assistantships & Peer Mentoring -->
       <div class="mb-10">
-        <h2 class="font-serif text-lg font-bold text-ink mb-4">Teaching Assistantships</h2>
+        <h2 class="font-serif text-lg font-bold text-ink mb-4">Teaching Assistantships &amp; Peer Mentoring</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <!-- Role 1: Vision: Ways of Seeing -->
           <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
-            <div class="text-xs font-mono text-accent">Teaching Assistant</div>
-            <h3 class="font-serif text-base font-bold text-ink">Fundamentals of Psychophysics</h3>
-            <p class="text-xs text-muted">PsychoPy · Experimental Design &amp; Behavioral Testing</p>
+            <div class="text-xs font-mono text-accent">Teaching Assistant · Oct 2026 – Dec 2026</div>
+            <h3 class="font-serif text-base font-bold text-ink">PSYC338: Vision: Ways of Seeing</h3>
+            <p class="text-xs text-muted">Computational Vision (Marr) · Neural Circuits of Perception</p>
             <p class="text-sm text-ink/90 pt-1">
-              Led PsychoPy programming tutorials and mentored undergraduate students in designing, piloting, and analyzing psychophysical experiments.
+              Facilitated classroom logistics and practical sessions covering neural circuits of perception, early spatial filtering, computational vision, perceptual organization, depth and motion processing, visual attention, and socio-political critiques of imagery.
             </p>
           </div>
 
+          <!-- Role 2: Data Analytics -->
           <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
-            <div class="text-xs font-mono text-accent">Teaching Assistant</div>
+            <div class="text-xs font-mono text-accent">Teaching Assistant · Jan 2026 – Apr 2026</div>
             <h3 class="font-serif text-base font-bold text-ink">Data Analytics</h3>
-            <p class="text-xs text-muted">R Programming · Statistical Modeling</p>
+            <p class="text-xs text-muted">R Programming · Statistical Modeling &amp; Inference</p>
             <p class="text-sm text-ink/90 pt-1">
-              Assisted students with statistical inference, regression modeling, data wrangling, and reproducible analysis workflows in R.
+              Supported conceptual understanding of statistical data analysis, assisted in grading, and facilitated classroom R programming activities and reproducible analysis workflows.
             </p>
           </div>
+
+          <!-- Role 3: Fundamentals of Psychophysics -->
+          <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
+            <div class="text-xs font-mono text-accent">Teaching Assistant · Sept 2025 – Dec 2025</div>
+            <h3 class="font-serif text-base font-bold text-ink">PSYC238: Fundamentals of Psychophysics</h3>
+            <p class="text-xs text-muted">PsychoPy (Builder &amp; Coder) · Experimental Design</p>
+            <p class="text-sm text-ink/90 pt-1">
+              Facilitated classroom laboratory activities on PsychoPy (Builder and Coder) and psychophysical data analysis, while holding tutorials and providing experimental logistics support.
+            </p>
+          </div>
+
+          <!-- Role 4: Centre for Writing and Pedagogy -->
+          <div class="border border-hairline rounded bg-white p-4 space-y-1.5">
+            <div class="text-xs font-mono text-accent">Peer Tutor &amp; Mentor · Sept 2024 – Apr 2026</div>
+            <h3 class="font-serif text-base font-bold text-ink">Centre for Writing and Pedagogy</h3>
+            <p class="text-xs text-muted">Academic Writing · Tutor Mentorship (3 Terms)</p>
+            <p class="text-sm text-ink/90 pt-1">
+              Selected at the top of my cohort to tutor first-year academic reading and writing across three terms; subsequently promoted to Mentor to guide and support fellow peer tutors.
+            </p>
+          </div>
+
         </div>
       </div>
 
@@ -556,9 +728,9 @@
             </h3>
             <ul class="space-y-1.5 text-ink/90">
               <li>Systems &amp; Cognitive Neuroscience</li>
+              <li>Vision: Ways of Seeing</li>
               <li>Fundamentals of Psychophysics</li>
-              <li>Cognitive Psychology</li>
-              <li>Research Methods in Psychology</li>
+              <li>Experimental Social Psychology</li>
               <li>Undergraduate Capstone Thesis</li>
             </ul>
           </div>
@@ -570,21 +742,23 @@
             </h3>
             <ul class="space-y-1.5 text-ink/90">
               <li>Programming for Psychologists (Python &amp; GNU Octave)</li>
-              <li>Data Science (Python &amp; Mathematical Foundations)</li>
-              <li>Statistics &amp; Biostatistics</li>
+              <li>Python for Data Science</li>
+              <li>Statistics and Research Methods I &amp; II</li>
+              <li>Biostatistics</li>
               <li>Data Analytics in R</li>
             </ul>
           </div>
 
-          <!-- Column 3: Chemistry Concentration -->
+          <!-- Column 3: Chemistry & Global Arts Concentrations -->
           <div class="space-y-2">
             <h3 class="font-serif text-xs font-bold uppercase tracking-wider text-muted border-b border-hairline pb-1.5">
-              Chemistry Concentration
+              Concentrations (Chemistry &amp; Global Arts)
             </h3>
             <ul class="space-y-1.5 text-ink/90">
               <li>Analytical Chemistry</li>
               <li>Physical &amp; Organic Chemistry</li>
               <li>Quantitative Laboratory Instrumentation</li>
+              <li>Global Arts Concentration</li>
             </ul>
           </div>
 
@@ -607,10 +781,10 @@
         <!-- EDIT: Update or add your specific workshops, summer schools, and training sessions below -->
         <div class="border-b border-hairline pb-4 flex flex-col sm:flex-row sm:justify-between gap-2">
           <div>
-            <h2 class="font-serif text-base font-bold text-ink">64-Channel EEG Acquisition &amp; MNE-Python Analysis Pipeline</h2>
+            <h2 class="font-serif text-base font-bold text-ink">64-Channel EEG Acquisition &amp; MNE-Python / EEGLAB Analysis Pipeline</h2>
             <p class="text-muted text-xs mt-0.5">Computational Cognition Laboratory, Krea University</p>
             <p class="text-ink/90 mt-1.5">
-              Hands-on training in high-density EEG recording, artifact rejection (ICA), ERP extraction (CDA, P3b), time-frequency decomposition (beta oscillations), and Linear Mixed-Effects (LME) model-to-brain fitting.
+              Six months of hands-on training in high-density 64-channel EEG recording, artifact rejection (ICA), ERP extraction (CDA, P3b), time-frequency decomposition (beta oscillations), and Linear Mixed-Effects (LME) model-to-brain fitting.
             </p>
           </div>
           <span class="font-mono text-xs text-muted shrink-0">2025–2026</span>
@@ -632,17 +806,11 @@
             <h2 class="font-serif text-base font-bold text-ink">Experimental Psychophysics &amp; Stimulus Control in PsychoPy</h2>
             <p class="text-muted text-xs mt-0.5">Krea University</p>
             <p class="text-ink/90 mt-1.5">
-              Millisecond-accurate visual and auditory stimulus presentation, staircase thresholding, and behavioral data pipelines.
+              Millisecond-accurate visual and auditory stimulus presentation (Builder and Coder), staircase thresholding, and behavioral data pipelines.
             </p>
           </div>
           <span class="font-mono text-xs text-muted shrink-0">2023–2024</span>
         </div>
-
-        <!--
-          HOW TO ADD MORE WORKSHOPS:
-          Copy one of the <div class="border-b border-hairline pb-4 ..."> blocks above
-          and paste it right here with your workshop title, organizer, description, and year.
-        -->
       </div>
     </section>
 
@@ -710,7 +878,6 @@
 
     // Smart CV Download: opens cv.pdf if uploaded to repo, otherwise prints clean full-CV PDF
     function handleCVDownload(event) {
-      // Check if cv.pdf exists on the server; if not, trigger clean print-to-PDF layout
       fetch('cv.pdf', { method: 'HEAD' })
         .then(response => {
           if (!response.ok) {
